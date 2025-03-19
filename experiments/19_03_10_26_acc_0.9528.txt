@@ -1,0 +1,110 @@
+DATE: 19/03/2025 10:26
+MODEL ACCURACY: 0.9528
+
+CONFIGURATIONS:
+
+data_file = l1d
+apply_pca = False
+N_PCA = None
+num_components = 120
+BATCH_SIZE = 128
+PATCH_SIZE = 32
+STRIDE = 4
+NUM_CLASS = 3
+WEIGHT_DECAY = 0.0005
+LR = 0.001
+TRAIN_SIZE = 0.9
+VALIDATION_SIZE = 0.4
+EPOCH = 40
+
+TRAINING OUTPUT:
+
+['Epoch 1/40 | Loss: 0.0000 | Train Acc: 0.9622 | Val Acc: 0.9446 | LR: 0.001000 | Time: 135.64s', 'Epoch 2/40 | Loss: 0.0000 | Train Acc: 0.9744 | Val Acc: 0.9457 | LR: 0.001000 | Time: 135.34s', 'Epoch 3/40 | Loss: 0.0000 | Train Acc: 0.9755 | Val Acc: 0.9439 | LR: 0.001000 | Time: 139.83s', 'Epoch 4/40 | Loss: 0.0000 | Train Acc: 0.9759 | Val Acc: 0.9133 | LR: 0.001000 | Time: 137.72s', 'Epoch 5/40 | Loss: 0.0000 | Train Acc: 0.9762 | Val Acc: 0.9528 | LR: 0.001000 | Time: 138.68s', 'Epoch 6/40 | Loss: 0.0000 | Train Acc: 0.9766 | Val Acc: 0.9424 | LR: 0.001000 | Time: 138.25s', 'Epoch 7/40 | Loss: 0.0000 | Train Acc: 0.9766 | Val Acc: 0.9203 | LR: 0.001000 | Time: 138.38s', 'Epoch 8/40 | Loss: 0.0000 | Train Acc: 0.9767 | Val Acc: 0.9446 | LR: 0.001000 | Time: 138.17s', 'Epoch 9/40 | Loss: 0.0000 | Train Acc: 0.9769 | Val Acc: 0.9382 | LR: 0.000500 | Time: 138.14s', 'Epoch 10/40 | Loss: 0.0000 | Train Acc: 0.9788 | Val Acc: 0.9246 | LR: 0.000500 | Time: 138.72s', 'Epoch 11/40 | Loss: 0.0000 | Train Acc: 0.9789 | Val Acc: 0.9448 | LR: 0.000500 | Time: 139.13s', 'Epoch 12/40 | Loss: 0.0000 | Train Acc: 0.9791 | Val Acc: 0.9313 | LR: 0.000500 | Time: 139.01s', 'Epoch 13/40 | Loss: 0.0000 | Train Acc: 0.9792 | Val Acc: 0.9338 | LR: 0.000250 | Time: 139.67s', 'Epoch 14/40 | Loss: 0.0000 | Train Acc: 0.9807 | Val Acc: 0.9049 | LR: 0.000250 | Time: 139.27s', 'Epoch 15/40 | Loss: 0.0000 | Train Acc: 0.9808 | Val Acc: 0.9247 | LR: 0.000250 | Time: 139.50s', 'Epoch 16/40 | Loss: 0.0000 | Train Acc: 0.9810 | Val Acc: 0.9257 | LR: 0.000250 | Time: 139.26s', 'Epoch 17/40 | Loss: 0.0000 | Train Acc: 0.9812 | Val Acc: 0.9054 | LR: 0.000125 | Time: 139.66s', 'Epoch 18/40 | Loss: 0.0000 | Train Acc: 0.9821 | Val Acc: 0.9228 | LR: 0.000125 | Time: 139.70s', 'Epoch 19/40 | Loss: 0.0000 | Train Acc: 0.9822 | Val Acc: 0.9028 | LR: 0.000125 | Time: 139.56s', 'Epoch 20/40 | Loss: 0.0000 | Train Acc: 0.9824 | Val Acc: 0.9381 | LR: 0.000125 | Time: 139.60s', '⏹️ Early stopping triggered at epoch 20. Best val_acc: 0.9528', '🏁 Training completed in 2773.35 seconds.', '🛑 Stopped at epoch 20', 'Best model retained: results\\l1d\\epoch_4_acc_0.9528.pth']
+
+MODEL SUMMARY:
+
+==========================================================================================
+Layer (type:depth-idx)                   Output Shape              Param #
+==========================================================================================
+WaveletCNN                               [1, 3, 32, 32]            --
+├─ModuleList: 1-4                        --                        --
+│    └─DWTForward: 2-1                   [1, 120, 16, 16]          --
+├─ModuleList: 1-5                        --                        (recursive)
+│    └─Conv2d: 2-2                       [1, 16, 16, 16]           7,696
+├─ModuleList: 1-6                        --                        (recursive)
+│    └─Sequential: 2-3                   [1, 16, 16, 16]           --
+│    │    └─Conv2d: 3-1                  [1, 16, 16, 16]           2,320
+│    │    └─BatchNorm2d: 3-2             [1, 16, 16, 16]           32
+│    │    └─ReLU: 3-3                    [1, 16, 16, 16]           --
+│    │    └─Dropout: 3-4                 [1, 16, 16, 16]           --
+├─ModuleList: 1-4                        --                        --
+│    └─DWTForward: 2-4                   [1, 120, 8, 8]            --
+├─ModuleList: 1-5                        --                        (recursive)
+│    └─Conv2d: 2-5                       [1, 32, 8, 8]             15,904
+├─ModuleList: 1-6                        --                        (recursive)
+│    └─Sequential: 2-6                   [1, 32, 8, 8]             --
+│    │    └─Conv2d: 3-5                  [1, 32, 8, 8]             9,248
+│    │    └─BatchNorm2d: 3-6             [1, 32, 8, 8]             64
+│    │    └─ReLU: 3-7                    [1, 32, 8, 8]             --
+│    │    └─Dropout: 3-8                 [1, 32, 8, 8]             --
+├─Sequential: 1-7                        [1, 24, 8, 8]             --
+│    └─Conv2d: 2-7                       [1, 24, 8, 8]             10,392
+│    └─BatchNorm2d: 2-8                  [1, 24, 8, 8]             48
+│    └─ReLU: 2-9                         [1, 24, 8, 8]             --
+│    └─Dropout: 2-10                     [1, 24, 8, 8]             --
+│    └─Conv2d: 2-11                      [1, 24, 8, 8]             5,208
+│    └─BatchNorm2d: 2-12                 [1, 24, 8, 8]             48
+│    └─ReLU: 2-13                        [1, 24, 8, 8]             --
+├─ModuleList: 1-8                        --                        --
+│    └─ConvTranspose2d: 2-14             [1, 12, 16, 16]           1,164
+│    └─ConvTranspose2d: 2-15             [1, 3, 32, 32]            147
+==========================================================================================
+Total params: 52,271
+Trainable params: 52,271
+Non-trainable params: 0
+Total mult-adds (Units.MEGABYTES): 5.62
+==========================================================================================
+Input size (MB): 0.49
+Forward/backward pass size (MB): 0.25
+Params size (MB): 0.21
+Estimated Total Size (MB): 0.95
+==========================================================================================
+
+MODEL CODE:
+
+WaveletCNN(
+  (dwt): ModuleList(
+    (0-1): 2 x DWTForward()
+  )
+  (projections): ModuleList(
+    (0): Conv2d(480, 16, kernel_size=(1, 1), stride=(1, 1))
+    (1): Conv2d(496, 32, kernel_size=(1, 1), stride=(1, 1))
+  )
+  (conv_blocks): ModuleList(
+    (0): Sequential(
+      (0): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU(inplace=True)
+      (3): Dropout(p=0.2, inplace=False)
+    )
+    (1): Sequential(
+      (0): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU(inplace=True)
+      (3): Dropout(p=0.2, inplace=False)
+    )
+  )
+  (seg_head): Sequential(
+    (0): Conv2d(48, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): Dropout(p=0.2, inplace=False)
+    (4): Conv2d(24, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (5): BatchNorm2d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU(inplace=True)
+  )
+  (upsample_layers): ModuleList(
+    (0): ConvTranspose2d(24, 12, kernel_size=(2, 2), stride=(2, 2))
+    (1): ConvTranspose2d(12, 3, kernel_size=(2, 2), stride=(2, 2))
+  )
+)

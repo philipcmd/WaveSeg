@@ -1,0 +1,76 @@
+DATE: 18/03/2025 17:17
+MODEL ACCURACY (EPOCH 0): 0.8781
+
+CONFIGURATIONS:
+
+data_file = l1d
+apply_pca = True
+N_PCA = 70
+num_components = 70
+BATCH_SIZE = 128
+PATCH_SIZE = 32
+STRIDE = 4
+NUM_CLASS = 3
+WEIGHT_DECAY = 0.0005
+LR = 0.001
+TRAIN_SIZE = 0.8
+VALIDATION_SIZE = 0.2
+EPOCH = 15
+VAL_EPOCH = 5
+TEST_PATCH_SIZE = 2
+TEST_STRIDE = 1
+
+TRAINING OUTPUT:
+
+['Epoch 1/15 | Loss: 0.0000 | Train Acc: 0.9499 | Val Acc: 0.8781 | LR: 0.001000 | Time: 240.86s', 'Epoch 2/15 | Loss: 0.0000 | Train Acc: 0.9623 | Val Acc: 0.8585 | LR: 0.001000 | Time: 241.71s', 'Epoch 3/15 | Loss: 0.0000 | Train Acc: 0.9638 | Val Acc: 0.7759 | LR: 0.001000 | Time: 240.98s', 'Epoch 4/15 | Loss: 0.0000 | Train Acc: 0.9642 | Val Acc: 0.8485 | LR: 0.001000 | Time: 243.15s', 'Epoch 5/15 | Loss: 0.0000 | Train Acc: 0.9644 | Val Acc: 0.8257 | LR: 0.000500 | Time: 243.58s', 'Epoch 6/15 | Loss: 0.0000 | Train Acc: 0.9680 | Val Acc: 0.8361 | LR: 0.000500 | Time: 242.62s', 'Epoch 7/15 | Loss: 0.0000 | Train Acc: 0.9683 | Val Acc: 0.8241 | LR: 0.000500 | Time: 241.63s', 'Epoch 8/15 | Loss: 0.0000 | Train Acc: 0.9683 | Val Acc: 0.8383 | LR: 0.000500 | Time: 242.11s', 'Epoch 9/15 | Loss: 0.0000 | Train Acc: 0.9684 | Val Acc: 0.8437 | LR: 0.000250 | Time: 238.90s', 'Epoch 10/15 | Loss: 0.0000 | Train Acc: 0.9709 | Val Acc: 0.8396 | LR: 0.000250 | Time: 239.68s', 'Epoch 11/15 | Loss: 0.0000 | Train Acc: 0.9711 | Val Acc: 0.8659 | LR: 0.000250 | Time: 241.45s', 'Epoch 12/15 | Loss: 0.0000 | Train Acc: 0.9712 | Val Acc: 0.8611 | LR: 0.000250 | Time: 244.44s', 'Epoch 13/15 | Loss: 0.0000 | Train Acc: 0.9712 | Val Acc: 0.8579 | LR: 0.000125 | Time: 244.80s', 'Epoch 14/15 | Loss: 0.0000 | Train Acc: 0.9730 | Val Acc: 0.8510 | LR: 0.000125 | Time: 244.54s', 'Epoch 15/15 | Loss: 0.0000 | Train Acc: 0.9732 | Val Acc: 0.8606 | LR: 0.000125 | Time: 243.82s', '🏁 Training completed in 3634.32 seconds.', '🛑 Stopped at epoch 15', 'Best model retained: results\\l1d\\epoch_0_acc_0.8781.pth']
+
+MODEL SUMMARY:
+
+==========================================================================================
+Layer (type:depth-idx)                   Output Shape              Param #
+==========================================================================================
+WaveletCNN                               [1, 3, 32, 32]            --
+├─ModuleList: 1-4                        --                        --
+│    └─DWTForward: 2-1                   [1, 70, 16, 16]           --
+├─ModuleList: 1-5                        --                        (recursive)
+│    └─Conv2d: 2-2                       [1, 16, 16, 16]           4,496
+├─ModuleList: 1-6                        --                        (recursive)
+│    └─Sequential: 2-3                   [1, 16, 16, 16]           --
+│    │    └─Conv2d: 3-1                  [1, 16, 16, 16]           2,320
+│    │    └─BatchNorm2d: 3-2             [1, 16, 16, 16]           32
+│    │    └─ReLU: 3-3                    [1, 16, 16, 16]           --
+│    │    └─Dropout: 3-4                 [1, 16, 16, 16]           --
+├─ModuleList: 1-4                        --                        --
+│    └─DWTForward: 2-4                   [1, 70, 8, 8]             --
+├─ModuleList: 1-5                        --                        (recursive)
+│    └─Conv2d: 2-5                       [1, 32, 8, 8]             9,504
+├─ModuleList: 1-6                        --                        (recursive)
+│    └─Sequential: 2-6                   [1, 32, 8, 8]             --
+│    │    └─Conv2d: 3-5                  [1, 32, 8, 8]             9,248
+│    │    └─BatchNorm2d: 3-6             [1, 32, 8, 8]             64
+│    │    └─ReLU: 3-7                    [1, 32, 8, 8]             --
+│    │    └─Dropout: 3-8                 [1, 32, 8, 8]             --
+├─Sequential: 1-7                        [1, 24, 8, 8]             --
+│    └─Conv2d: 2-7                       [1, 24, 8, 8]             10,392
+│    └─BatchNorm2d: 2-8                  [1, 24, 8, 8]             48
+│    └─ReLU: 2-9                         [1, 24, 8, 8]             --
+│    └─Dropout: 2-10                     [1, 24, 8, 8]             --
+│    └─Conv2d: 2-11                      [1, 24, 8, 8]             5,208
+│    └─ReLU: 2-12                        [1, 24, 8, 8]             --
+├─ModuleList: 1-8                        --                        --
+│    └─ConvTranspose2d: 2-13             [1, 12, 16, 16]           1,164
+│    └─ConvTranspose2d: 2-14             [1, 3, 32, 32]            147
+==========================================================================================
+Total params: 42,623
+Trainable params: 42,623
+Non-trainable params: 0
+Total mult-adds (Units.MEGABYTES): 4.39
+==========================================================================================
+Input size (MB): 0.29
+Forward/backward pass size (MB): 0.23
+Params size (MB): 0.17
+Estimated Total Size (MB): 0.69
+==========================================================================================
+
+MODEL CODE:
+
