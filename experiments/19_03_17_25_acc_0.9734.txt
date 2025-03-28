@@ -22,16 +22,16 @@ DROPOUT RATE = 0.3
 
 TRAINING OUTPUT:
 
-Epoch 1/10 | Loss: 0.0000 | Train Acc: 0.9657 | Val Acc: 0.9667 | Val IoU: 0.8647 | LR: 0.001000 | Time: 146.00s
-Epoch 2/10 | Loss: 0.0000 | Train Acc: 0.9766 | Val Acc: 0.9646 | Val IoU: 0.8525 | LR: 0.001000 | Time: 146.84s
-Epoch 3/10 | Loss: 0.0000 | Train Acc: 0.9785 | Val Acc: 0.9664 | Val IoU: 0.8595 | LR: 0.001000 | Time: 146.93s
-Epoch 4/10 | Loss: 0.0000 | Train Acc: 0.9794 | Val Acc: 0.9718 | Val IoU: 0.8834 | LR: 0.001000 | Time: 146.29s
-Epoch 5/10 | Loss: 0.0000 | Train Acc: 0.9801 | Val Acc: 0.9704 | Val IoU: 0.8770 | LR: 0.001000 | Time: 147.74s
-Epoch 6/10 | Loss: 0.0000 | Train Acc: 0.9806 | Val Acc: 0.9706 | Val IoU: 0.8797 | LR: 0.001000 | Time: 147.98s
-Epoch 7/10 | Loss: 0.0000 | Train Acc: 0.9811 | Val Acc: 0.9730 | Val IoU: 0.8869 | LR: 0.001000 | Time: 148.06s
-Epoch 8/10 | Loss: 0.0000 | Train Acc: 0.9814 | Val Acc: 0.9734 | Val IoU: 0.8898 | LR: 0.001000 | Time: 147.96s
-Epoch 9/10 | Loss: 0.0000 | Train Acc: 0.9816 | Val Acc: 0.9703 | Val IoU: 0.8796 | LR: 0.001000 | Time: 146.31s
-Epoch 10/10 | Loss: 0.0000 | Train Acc: 0.9818 | Val Acc: 0.9682 | Val IoU: 0.8672 | LR: 0.001000 | Time: 147.15s
+Epoch 1/10 | Train Acc: 0.9657 | Val Acc: 0.9667 | Val IoU: 0.8647 | LR: 0.001000 | Time: 146.00s
+Epoch 2/10 | Train Acc: 0.9766 | Val Acc: 0.9646 | Val IoU: 0.8525 | LR: 0.001000 | Time: 146.84s
+Epoch 3/10 | Train Acc: 0.9785 | Val Acc: 0.9664 | Val IoU: 0.8595 | LR: 0.001000 | Time: 146.93s
+Epoch 4/10 | Train Acc: 0.9794 | Val Acc: 0.9718 | Val IoU: 0.8834 | LR: 0.001000 | Time: 146.29s
+Epoch 5/10 | Train Acc: 0.9801 | Val Acc: 0.9704 | Val IoU: 0.8770 | LR: 0.001000 | Time: 147.74s
+Epoch 6/10 | Train Acc: 0.9806 | Val Acc: 0.9706 | Val IoU: 0.8797 | LR: 0.001000 | Time: 147.98s
+Epoch 7/10 | Train Acc: 0.9811 | Val Acc: 0.9730 | Val IoU: 0.8869 | LR: 0.001000 | Time: 148.06s
+Epoch 8/10 | Train Acc: 0.9814 | Val Acc: 0.9734 | Val IoU: 0.8898 | LR: 0.001000 | Time: 147.96s
+Epoch 9/10 | Train Acc: 0.9816 | Val Acc: 0.9703 | Val IoU: 0.8796 | LR: 0.001000 | Time: 146.31s
+Epoch 10/10 | Train Acc: 0.9818 | Val Acc: 0.9682 | Val IoU: 0.8672 | LR: 0.001000 | Time: 147.15s
 🏁 Training completed in 1471.31 seconds.
 🛑 Stopped at epoch 10
 Best model retained: results\l1d\19_03_17_25_acc_0.9734_EPOCH_7.pth

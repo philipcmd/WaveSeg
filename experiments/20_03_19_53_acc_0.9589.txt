@@ -1,0 +1,118 @@
+DATE: 20/03/2025 19:53
+MODEL ACCURACY: 0.9589
+
+CONFIGURATIONS:
+
+data_file = l1d
+apply_pca = False
+N_PCA = None
+num_components = 120
+BATCH_SIZE = 128
+PATCH_SIZE = 32
+STRIDE = 4
+NUM_CLASS = 3
+WEIGHT_DECAY = 0.0005
+LR = 0.001
+TRAIN_SIZE = 0.6
+VALIDATION_SIZE = 0.3
+EPOCH = 20
+MOTHER WAVELET = db2
+Wavelet Levels = 1
+BASE CHANNELS = 16
+DROPOUT RATE = 0.3
+
+TRAINING OUTPUT:
+
+Epoch 1/20 | Loss: 0.0000 | Train Acc: 0.9546 | Val Acc: 0.9573 | Val IoU: 0.8558 | LR: 0.001000 | Time: 140.52s
+Epoch 2/20 | Loss: 0.0000 | Train Acc: 0.9673 | Val Acc: 0.9547 | Val IoU: 0.8510 | LR: 0.001000 | Time: 142.33s
+Epoch 3/20 | Loss: 0.0000 | Train Acc: 0.9692 | Val Acc: 0.9544 | Val IoU: 0.8454 | LR: 0.001000 | Time: 142.73s
+Epoch 4/20 | Loss: 0.0000 | Train Acc: 0.9701 | Val Acc: 0.9526 | Val IoU: 0.8413 | LR: 0.001000 | Time: 142.12s
+Epoch 5/20 | Loss: 0.0000 | Train Acc: 0.9708 | Val Acc: 0.9504 | Val IoU: 0.8325 | LR: 0.000500 | Time: 143.23s
+Epoch 6/20 | Loss: 0.0000 | Train Acc: 0.9723 | Val Acc: 0.9570 | Val IoU: 0.8569 | LR: 0.000500 | Time: 143.14s
+Epoch 7/20 | Loss: 0.0000 | Train Acc: 0.9726 | Val Acc: 0.9585 | Val IoU: 0.8653 | LR: 0.000500 | Time: 143.78s
+Epoch 8/20 | Loss: 0.0000 | Train Acc: 0.9728 | Val Acc: 0.9476 | Val IoU: 0.8315 | LR: 0.000500 | Time: 143.58s
+Epoch 9/20 | Loss: 0.0000 | Train Acc: 0.9729 | Val Acc: 0.9537 | Val IoU: 0.8447 | LR: 0.000500 | Time: 144.46s
+Epoch 10/20 | Loss: 0.0000 | Train Acc: 0.9731 | Val Acc: 0.9571 | Val IoU: 0.8516 | LR: 0.000500 | Time: 143.84s
+Epoch 11/20 | Loss: 0.0000 | Train Acc: 0.9733 | Val Acc: 0.9525 | Val IoU: 0.8400 | LR: 0.000250 | Time: 143.53s
+Epoch 12/20 | Loss: 0.0000 | Train Acc: 0.9739 | Val Acc: 0.9534 | Val IoU: 0.8441 | LR: 0.000250 | Time: 143.22s
+Epoch 13/20 | Loss: 0.0000 | Train Acc: 0.9740 | Val Acc: 0.9589 | Val IoU: 0.8621 | LR: 0.000250 | Time: 143.55s
+Epoch 14/20 | Loss: 0.0000 | Train Acc: 0.9741 | Val Acc: 0.9556 | Val IoU: 0.8510 | LR: 0.000250 | Time: 143.73s
+Epoch 15/20 | Loss: 0.0000 | Train Acc: 0.9742 | Val Acc: 0.9562 | Val IoU: 0.8519 | LR: 0.000250 | Time: 143.28s
+Epoch 16/20 | Loss: 0.0000 | Train Acc: 0.9742 | Val Acc: 0.9586 | Val IoU: 0.8617 | LR: 0.000250 | Time: 143.78s
+Epoch 17/20 | Loss: 0.0000 | Train Acc: 0.9743 | Val Acc: 0.9581 | Val IoU: 0.8601 | LR: 0.000125 | Time: 143.27s
+Epoch 18/20 | Loss: 0.0000 | Train Acc: 0.9747 | Val Acc: 0.9527 | Val IoU: 0.8411 | LR: 0.000125 | Time: 143.43s
+Epoch 19/20 | Loss: 0.0000 | Train Acc: 0.9746 | Val Acc: 0.9547 | Val IoU: 0.8491 | LR: 0.000125 | Time: 143.83s
+Epoch 20/20 | Loss: 0.0000 | Train Acc: 0.9746 | Val Acc: 0.9516 | Val IoU: 0.8397 | LR: 0.000125 | Time: 144.68s
+🏁 Training completed in 2866.09 seconds.
+🛑 Stopped at epoch 20
+Best model retained: results\l1d\20_03_19_53_acc_0.9589_EPOCH_12.pth
+
+
+MODEL SUMMARY:
+
+==========================================================================================
+Layer (type:depth-idx)                   Output Shape              Param #
+==========================================================================================
+WaveletCNN                               [1, 3, 32, 32]            --
+├─ModuleList: 1-1                        --                        --
+│    └─DWTForward: 2-1                   [1, 120, 17, 17]          --
+├─ModuleList: 1-2                        --                        --
+│    └─Conv2d: 2-2                       [1, 16, 17, 17]           7,696
+├─ModuleList: 1-3                        --                        --
+│    └─Sequential: 2-3                   [1, 16, 17, 17]           --
+│    │    └─Conv2d: 3-1                  [1, 16, 17, 17]           2,320
+│    │    └─BatchNorm2d: 3-2             [1, 16, 17, 17]           32
+│    │    └─LeakyReLU: 3-3               [1, 16, 17, 17]           --
+│    │    └─Dropout: 3-4                 [1, 16, 17, 17]           --
+├─Sequential: 1-4                        [1, 8, 17, 17]            --
+│    └─Conv2d: 2-4                       [1, 8, 17, 17]            1,160
+│    └─BatchNorm2d: 2-5                  [1, 8, 17, 17]            16
+│    └─LeakyReLU: 2-6                    [1, 8, 17, 17]            --
+│    └─Dropout: 2-7                      [1, 8, 17, 17]            --
+│    └─Conv2d: 2-8                       [1, 8, 17, 17]            584
+│    └─BatchNorm2d: 2-9                  [1, 8, 17, 17]            16
+│    └─LeakyReLU: 2-10                   [1, 8, 17, 17]            --
+├─ModuleList: 1-5                        --                        --
+│    └─ConvTranspose2d: 2-11             [1, 3, 34, 34]            99
+==========================================================================================
+Total params: 11,923
+Trainable params: 11,923
+Non-trainable params: 0
+Total mult-adds (Units.MEGABYTES): 3.51
+==========================================================================================
+Input size (MB): 0.49
+Forward/backward pass size (MB): 0.21
+Params size (MB): 0.05
+Estimated Total Size (MB): 0.75
+==========================================================================================
+
+MODEL CODE:
+
+WaveletCNN(
+  (dwt): ModuleList(
+    (0): DWTForward()
+  )
+  (projections): ModuleList(
+    (0): Conv2d(480, 16, kernel_size=(1, 1), stride=(1, 1))
+  )
+  (conv_blocks): ModuleList(
+    (0): Sequential(
+      (0): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.01, inplace=True)
+      (3): Dropout(p=0.3, inplace=False)
+    )
+  )
+  (seg_head): Sequential(
+    (0): Conv2d(16, 8, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(8, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.01, inplace=True)
+    (3): Dropout(p=0.3, inplace=False)
+    (4): Conv2d(8, 8, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (5): BatchNorm2d(8, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.01, inplace=True)
+  )
+  (upsample_layers): ModuleList(
+    (0): ConvTranspose2d(8, 3, kernel_size=(2, 2), stride=(2, 2))
+  )
+)
