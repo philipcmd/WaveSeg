@@ -1,0 +1,125 @@
+DATE: 02/04/2025 13:06
+MODEL ACCURACY: 0.8809
+
+CONFIGURATIONS:
+
+data_file = l1d
+apply_pca = True
+N_PCA = 30
+num_components = 30
+BATCH_SIZE = 128
+PATCH_SIZE = 16
+STRIDE = 4
+NUM_CLASS = 3
+WEIGHT_DECAY = 0.0005
+LR = 0.001
+TRAIN_SIZE = 0.6
+VALIDATION_SIZE = 0.2
+EPOCH = 50
+MOTHER WAVELET = rbio1.1
+Wavelet Levels = 1
+BASE CHANNELS = 8
+DROPOUT RATE = 0.3
+
+TRAINING OUTPUT:
+
+Epoch 1/50 | Loss: 0.0000 | Train Acc: 0.8654 | Val Acc: 0.8642 | Val IoU: 0.7130 | LR: 0.001000 | Time: 87.05s
+Epoch 2/50 | Loss: 0.0000 | Train Acc: 0.8930 | Val Acc: 0.8733 | Val IoU: 0.7276 | LR: 0.001000 | Time: 86.72s
+Epoch 3/50 | Loss: 0.0000 | Train Acc: 0.8960 | Val Acc: 0.8686 | Val IoU: 0.7224 | LR: 0.001000 | Time: 87.58s
+Epoch 4/50 | Loss: 0.0000 | Train Acc: 0.8979 | Val Acc: 0.8570 | Val IoU: 0.7070 | LR: 0.001000 | Time: 84.67s
+Epoch 5/50 | Loss: 0.0000 | Train Acc: 0.8990 | Val Acc: 0.8516 | Val IoU: 0.7014 | LR: 0.001000 | Time: 84.12s
+Epoch 6/50 | Loss: 0.0000 | Train Acc: 0.9001 | Val Acc: 0.8620 | Val IoU: 0.7164 | LR: 0.000500 | Time: 84.46s
+Epoch 7/50 | Loss: 0.0000 | Train Acc: 0.9011 | Val Acc: 0.8809 | Val IoU: 0.7415 | LR: 0.000500 | Time: 84.35s
+Epoch 8/50 | Loss: 0.0000 | Train Acc: 0.9010 | Val Acc: 0.8567 | Val IoU: 0.7082 | LR: 0.000500 | Time: 84.63s
+Epoch 9/50 | Loss: 0.0000 | Train Acc: 0.9011 | Val Acc: 0.8651 | Val IoU: 0.7206 | LR: 0.000500 | Time: 84.58s
+Epoch 10/50 | Loss: 0.0000 | Train Acc: 0.9013 | Val Acc: 0.8613 | Val IoU: 0.7169 | LR: 0.000500 | Time: 84.11s
+Epoch 11/50 | Loss: 0.0000 | Train Acc: 0.9014 | Val Acc: 0.8699 | Val IoU: 0.7258 | LR: 0.000250 | Time: 83.88s
+Epoch 12/50 | Loss: 0.0000 | Train Acc: 0.9015 | Val Acc: 0.8576 | Val IoU: 0.7115 | LR: 0.000250 | Time: 84.93s
+Epoch 13/50 | Loss: 0.0000 | Train Acc: 0.9019 | Val Acc: 0.8736 | Val IoU: 0.7310 | LR: 0.000250 | Time: 84.12s
+Epoch 14/50 | Loss: 0.0000 | Train Acc: 0.9016 | Val Acc: 0.8642 | Val IoU: 0.7186 | LR: 0.000250 | Time: 84.34s
+Epoch 15/50 | Loss: 0.0000 | Train Acc: 0.9017 | Val Acc: 0.8643 | Val IoU: 0.7193 | LR: 0.000125 | Time: 84.49s
+Epoch 16/50 | Loss: 0.0000 | Train Acc: 0.9020 | Val Acc: 0.8683 | Val IoU: 0.7250 | LR: 0.000125 | Time: 84.77s
+Epoch 17/50 | Loss: 0.0000 | Train Acc: 0.9020 | Val Acc: 0.8731 | Val IoU: 0.7312 | LR: 0.000125 | Time: 84.37s
+Epoch 18/50 | Loss: 0.0000 | Train Acc: 0.9020 | Val Acc: 0.8568 | Val IoU: 0.7094 | LR: 0.000125 | Time: 85.13s
+Epoch 19/50 | Loss: 0.0000 | Train Acc: 0.9020 | Val Acc: 0.8774 | Val IoU: 0.7375 | LR: 0.000063 | Time: 85.65s
+Epoch 20/50 | Loss: 0.0000 | Train Acc: 0.9022 | Val Acc: 0.8658 | Val IoU: 0.7213 | LR: 0.000063 | Time: 84.41s
+Epoch 21/50 | Loss: 0.0000 | Train Acc: 0.9022 | Val Acc: 0.8651 | Val IoU: 0.7203 | LR: 0.000063 | Time: 84.24s
+Epoch 22/50 | Loss: 0.0000 | Train Acc: 0.9022 | Val Acc: 0.8735 | Val IoU: 0.7318 | LR: 0.000063 | Time: 85.08s
+Epoch 23/50 | Loss: 0.0000 | Train Acc: 0.9022 | Val Acc: 0.8764 | Val IoU: 0.7358 | LR: 0.000031 | Time: 84.95s
+Epoch 24/50 | Loss: 0.0000 | Train Acc: 0.9022 | Val Acc: 0.8547 | Val IoU: 0.7078 | LR: 0.000031 | Time: 84.51s
+Epoch 25/50 | Loss: 0.0000 | Train Acc: 0.9022 | Val Acc: 0.8773 | Val IoU: 0.7371 | LR: 0.000031 | Time: 83.80s
+Epoch 26/50 | Loss: 0.0000 | Train Acc: 0.9021 | Val Acc: 0.8626 | Val IoU: 0.7177 | LR: 0.000031 | Time: 84.97s
+Epoch 27/50 | Loss: 0.0000 | Train Acc: 0.9023 | Val Acc: 0.8664 | Val IoU: 0.7227 | LR: 0.000016 | Time: 84.77s
+Epoch 28/50 | Loss: 0.0000 | Train Acc: 0.9022 | Val Acc: 0.8480 | Val IoU: 0.6993 | LR: 0.000016 | Time: 84.36s
+Epoch 29/50 | Loss: 0.0000 | Train Acc: 0.9021 | Val Acc: 0.8734 | Val IoU: 0.7315 | LR: 0.000016 | Time: 85.19s
+Epoch 30/50 | Loss: 0.0000 | Train Acc: 0.9021 | Val Acc: 0.8621 | Val IoU: 0.7168 | LR: 0.000016 | Time: 84.48s
+Epoch 31/50 | Loss: 0.0000 | Train Acc: 0.9022 | Val Acc: 0.8799 | Val IoU: 0.7405 | LR: 0.000008 | Time: 85.16s
+Epoch 32/50 | Loss: 0.0000 | Train Acc: 0.9022 | Val Acc: 0.8709 | Val IoU: 0.7283 | LR: 0.000008 | Time: 85.73s
+Epoch 33/50 | Loss: 0.0000 | Train Acc: 0.9021 | Val Acc: 0.8594 | Val IoU: 0.7135 | LR: 0.000008 | Time: 84.85s
+Epoch 34/50 | Loss: 0.0000 | Train Acc: 0.9021 | Val Acc: 0.8701 | Val IoU: 0.7271 | LR: 0.000008 | Time: 84.75s
+Epoch 35/50 | Loss: 0.0000 | Train Acc: 0.9022 | Val Acc: 0.8691 | Val IoU: 0.7261 | LR: 0.000004 | Time: 86.65s
+Epoch 36/50 | Loss: 0.0000 | Train Acc: 0.9022 | Val Acc: 0.8692 | Val IoU: 0.7256 | LR: 0.000004 | Time: 85.26s
+Epoch 37/50 | Loss: 0.0000 | Train Acc: 0.9023 | Val Acc: 0.8707 | Val IoU: 0.7283 | LR: 0.000004 | Time: 85.01s
+⏹️ Early stopping triggered at epoch 37. Best val_acc: 0.8809
+🏁 Training completed in 3142.29 seconds.
+🛑 Stopped at epoch 37
+Best model retained: results\l1d\02_04_13_06_acc_0.8809_EPOCH_6.pth
+
+
+MODEL SUMMARY:
+
+==========================================================================================
+Layer (type:depth-idx)                   Output Shape              Param #
+==========================================================================================
+WaveletCNN                               [1, 3, 16, 16]            --
+├─ModuleList: 1-1                        --                        --
+│    └─DWT1DForward: 2-1                 [256, 30, 1]              --
+├─ModuleList: 1-2                        --                        --
+│    └─Conv2d: 2-2                       [1, 8, 16, 16]            728
+├─ModuleList: 1-3                        --                        --
+│    └─Sequential: 2-3                   [1, 8, 16, 16]            --
+│    │    └─Conv2d: 3-1                  [1, 8, 16, 16]            584
+│    │    └─BatchNorm2d: 3-2             [1, 8, 16, 16]            16
+│    │    └─LeakyReLU: 3-3               [1, 8, 16, 16]            --
+│    │    └─Dropout: 3-4                 [1, 8, 16, 16]            --
+├─Sequential: 1-4                        [1, 3, 16, 16]            --
+│    └─Conv2d: 2-4                       [1, 4, 16, 16]            292
+│    └─BatchNorm2d: 2-5                  [1, 4, 16, 16]            8
+│    └─LeakyReLU: 2-6                    [1, 4, 16, 16]            --
+│    └─Conv2d: 2-7                       [1, 3, 16, 16]            15
+==========================================================================================
+Total params: 1,643
+Trainable params: 1,643
+Non-trainable params: 0
+Total mult-adds (Units.MEGABYTES): 0.41
+==========================================================================================
+Input size (MB): 0.03
+Forward/backward pass size (MB): 0.07
+Params size (MB): 0.01
+Estimated Total Size (MB): 0.11
+==========================================================================================
+
+MODEL CODE:
+
+WaveletCNN(
+  (dwt_spectral): ModuleList(
+    (0): DWT1DForward()
+  )
+  (projections): ModuleList(
+    (0): Conv2d(90, 8, kernel_size=(1, 1), stride=(1, 1))
+  )
+  (conv_blocks): ModuleList(
+    (0): Sequential(
+      (0): Conv2d(8, 8, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): BatchNorm2d(8, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.01, inplace=True)
+      (3): Dropout(p=0.3, inplace=False)
+    )
+  )
+  (seg_head): Sequential(
+    (0): Conv2d(8, 4, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(4, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.01, inplace=True)
+    (3): Conv2d(4, 3, kernel_size=(1, 1), stride=(1, 1))
+  )
+)

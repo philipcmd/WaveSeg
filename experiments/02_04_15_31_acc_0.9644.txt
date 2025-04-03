@@ -1,0 +1,106 @@
+DATE: 02/04/2025 15:31
+MODEL ACCURACY: 0.9644
+
+CONFIGURATIONS:
+
+data_file = l1d
+apply_pca = True
+N_PCA = 10
+num_components = 10
+BATCH_SIZE = 128
+PATCH_SIZE = 16
+STRIDE = 4
+NUM_CLASS = 3
+WEIGHT_DECAY = 0.0005
+LR = 0.001
+TRAIN_SIZE = 0.6
+VALIDATION_SIZE = 0.2
+EPOCH = 50
+MOTHER WAVELET = rbio1.1
+Wavelet Levels = 1
+BASE CHANNELS = 8
+DROPOUT RATE = 0.3
+
+TRAINING OUTPUT:
+
+Epoch 1/50 | Loss: 0.0000 | Train Acc: 0.9508 | Val Acc: 0.9642 | Val IoU: 0.9067 | LR: 0.001000 | Time: 71.38s
+Epoch 2/50 | Loss: 0.0000 | Train Acc: 0.9566 | Val Acc: 0.9629 | Val IoU: 0.9041 | LR: 0.001000 | Time: 70.94s
+Epoch 3/50 | Loss: 0.0000 | Train Acc: 0.9569 | Val Acc: 0.9641 | Val IoU: 0.9074 | LR: 0.001000 | Time: 69.12s
+Epoch 4/50 | Loss: 0.0000 | Train Acc: 0.9571 | Val Acc: 0.9644 | Val IoU: 0.9073 | LR: 0.001000 | Time: 69.88s
+Epoch 5/50 | Loss: 0.0000 | Train Acc: 0.9573 | Val Acc: 0.9602 | Val IoU: 0.8974 | LR: 0.001000 | Time: 69.83s
+Epoch 6/50 | Loss: 0.0000 | Train Acc: 0.9576 | Val Acc: 0.9616 | Val IoU: 0.9003 | LR: 0.001000 | Time: 69.57s
+Epoch 7/50 | Loss: 0.0000 | Train Acc: 0.9578 | Val Acc: 0.9603 | Val IoU: 0.8985 | LR: 0.001000 | Time: 69.17s
+Epoch 8/50 | Loss: 0.0000 | Train Acc: 0.9578 | Val Acc: 0.9624 | Val IoU: 0.9030 | LR: 0.000500 | Time: 69.93s
+Epoch 9/50 | Loss: 0.0000 | Train Acc: 0.9584 | Val Acc: 0.9643 | Val IoU: 0.9065 | LR: 0.000500 | Time: 69.76s
+Epoch 10/50 | Loss: 0.0000 | Train Acc: 0.9584 | Val Acc: 0.9638 | Val IoU: 0.9060 | LR: 0.000500 | Time: 69.85s
+Epoch 11/50 | Loss: 0.0000 | Train Acc: 0.9584 | Val Acc: 0.9615 | Val IoU: 0.9003 | LR: 0.000500 | Time: 69.28s
+Epoch 12/50 | Loss: 0.0000 | Train Acc: 0.9584 | Val Acc: 0.9600 | Val IoU: 0.8991 | LR: 0.000250 | Time: 69.99s
+Epoch 13/50 | Loss: 0.0000 | Train Acc: 0.9586 | Val Acc: 0.9638 | Val IoU: 0.9064 | LR: 0.000250 | Time: 69.49s
+🏁 Training completed in 916.20 seconds.
+🛑 Stopped at epoch 14
+Best model retained: results\l1d\02_04_15_31_acc_0.9644_EPOCH_3.pth
+
+
+MODEL SUMMARY:
+
+==========================================================================================
+Layer (type:depth-idx)                   Output Shape              Param #
+==========================================================================================
+WaveletCNN                               [1, 4, 16, 16]            --
+├─ModuleList: 1-1                        --                        --
+│    └─DWT1DForward: 2-1                 [256, 10, 1]              --
+├─ModuleList: 1-2                        --                        --
+│    └─Conv2d: 2-2                       [1, 8, 16, 16]            248
+├─ModuleList: 1-3                        --                        --
+│    └─Sequential: 2-3                   [1, 8, 16, 16]            --
+│    │    └─Conv2d: 3-1                  [1, 8, 16, 16]            584
+│    │    └─BatchNorm2d: 3-2             [1, 8, 16, 16]            16
+│    │    └─LeakyReLU: 3-3               [1, 8, 16, 16]            --
+│    │    └─Dropout: 3-4                 [1, 8, 16, 16]            --
+├─Sequential: 1-4                        [1, 4, 16, 16]            --
+│    └─Conv2d: 2-4                       [1, 4, 16, 16]            292
+│    └─BatchNorm2d: 2-5                  [1, 4, 16, 16]            8
+│    └─LeakyReLU: 2-6                    [1, 4, 16, 16]            --
+│    └─Dropout: 2-7                      [1, 4, 16, 16]            --
+│    └─Conv2d: 2-8                       [1, 4, 16, 16]            148
+│    └─BatchNorm2d: 2-9                  [1, 4, 16, 16]            8
+│    └─LeakyReLU: 2-10                   [1, 4, 16, 16]            --
+==========================================================================================
+Total params: 1,304
+Trainable params: 1,304
+Non-trainable params: 0
+Total mult-adds (Units.MEGABYTES): 0.33
+==========================================================================================
+Input size (MB): 0.01
+Forward/backward pass size (MB): 0.08
+Params size (MB): 0.01
+Estimated Total Size (MB): 0.10
+==========================================================================================
+
+MODEL CODE:
+
+WaveletCNN(
+  (dwt_spectral): ModuleList(
+    (0): DWT1DForward()
+  )
+  (projections): ModuleList(
+    (0): Conv2d(30, 8, kernel_size=(1, 1), stride=(1, 1))
+  )
+  (conv_blocks): ModuleList(
+    (0): Sequential(
+      (0): Conv2d(8, 8, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): BatchNorm2d(8, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.01, inplace=True)
+      (3): Dropout(p=0.3, inplace=False)
+    )
+  )
+  (seg_head): Sequential(
+    (0): Conv2d(8, 4, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(4, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.01, inplace=True)
+    (3): Dropout(p=0.3, inplace=False)
+    (4): Conv2d(4, 4, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (5): BatchNorm2d(4, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.01, inplace=True)
+  )
+)
